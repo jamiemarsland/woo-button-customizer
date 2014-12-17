@@ -22,7 +22,7 @@ function cx_bc_register_theme_customizer( $wp_customize ) {
 			array(
 				'title'     => 'Button '.$i,
 				'priority'  => 200 + $i,
-				'description' => 'Please use the follow short code for this <br>
+				'description' => 'Please use the follow short code for this' should be 'Please use the following shortcode for this button:<br>
 [button class="bc-button'.$i.'"]Click here[/button]',
 				'panel'  => 'cx_bc_buttons',
 			)
@@ -52,7 +52,7 @@ function cx_bc_register_theme_customizer( $wp_customize ) {
 		
 		woo_bc_s_new_setting_create($i, 'select', 'Font Type', 'Helvetica, Arial', 'cx_bc_button'.$i, $wp_customize, 4, $fonts);
 		woo_bc_s_new_setting_create($i, 'number', 'Font Size', '14', 'cx_bc_button'.$i, $wp_customize, 5);
-		woo_bc_s_new_setting_create($i, 'radio', 'Font Bold', 'normal', 'cx_bc_button'.$i, $wp_customize, 6, 
+		woo_bc_s_new_setting_create($i, 'radio', 'Font Weight', 'normal', 'cx_bc_button'.$i, $wp_customize, 6, 
 			array(
 			'normal' => 'Normal',
 			'bold' => 'Bold'
