@@ -7,8 +7,12 @@ $settings_prefix = 'woo_bc_s_b';
 if(!function_exists('wp_get_current_user')) {
 	include(ABSPATH . "wp-includes/pluggable.php");
 }
-@include_once get_stylesheet_directory() . '/functions.php';
 
+$my_theme = wp_get_theme();
+$theme_name = $my_theme->get( 'Name' );
+if(strpos($theme_name, 'Canvas')!==false){
+@include_once get_stylesheet_directory() . '/functions.php';
+}
 	/**
 	 * Checks if google font available from canvas
 	 * @uses wf_get_google_fonts_store
