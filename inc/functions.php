@@ -22,7 +22,7 @@ function cx_bc_register_theme_customizer( $wp_customize ) {
 			array(
 				'title'     => 'Button '.$i,
 				'priority'  => 200 + $i,
-				'description' => 'Please use the follow short code for this' should be 'Please use the following shortcode for this button:<br>
+				'description' => 'Please use the following shortcode for this button:<br>
 [button class="bc-button'.$i.'"]Click here[/button]',
 				'panel'  => 'cx_bc_buttons',
 			)
