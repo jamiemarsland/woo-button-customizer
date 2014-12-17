@@ -9,9 +9,14 @@ function woo_bc_s_customizer_css() {
 	if(isset($our_google_fonts)){
 		for ($i=1; $i < ($num_of_butts+1); $i++) {
 			GLOBAL $settings_prefix;
-			if(array_key_exists(get_theme_mod( $settings_prefix.$i.'_font_type', 'Helvetica, Arial'), $our_google_fonts)){?>
-				<link href='http://fonts.googleapis.com/css?family=<?php str_replace(' ', '+', get_theme_mod( $settings_prefix.$i.'_font_type', 'Helvetica, Arial')); ?>' rel='stylesheet' type='text/css'>
-			<?php
+			if($our_google_fonts){
+				$font = get_theme_mod( $settings_prefix.$i.'_font_type', 'Helvetica, Arial');
+				if(array_key_exists($font, $our_google_fonts)){
+					$font = ucwords($font);
+					?>
+					<link href='http://fonts.googleapis.com/css?family=<?php echo str_replace(' ', '+', $font); ?>' rel='stylesheet' type='text/css'>
+				<?php
+				}
 			}
 		}
 	}

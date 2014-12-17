@@ -7,7 +7,7 @@ $settings_prefix = 'woo_bc_s_b';
 if(!function_exists('wp_get_current_user')) {
 	include(ABSPATH . "wp-includes/pluggable.php");
 }
-include_once get_template_directory() . '/functions.php';
+@include_once get_stylesheet_directory() . '/functions.php';
 
 	/**
 	 * Checks if google font available from canvas
@@ -96,12 +96,11 @@ include_once get_template_directory() . '/functions.php';
 	$wp_customize->add_control(
 			new Pluto_Customize_Alpha_Color_Control(
 					$wp_customize,
-					'pluto_color_control_one',
+					$setting_name,
 					array(
 							'label'    => __( $Title, '' ),
 							'palette' => true,
 							'section'	=> $section,
-							'settings'	=> $setting_name,
 							'priority'	=> $priority_for_controls
 					)
 			)
@@ -162,25 +161,28 @@ if(!function_exists( 'woo_bc_s_new_setting_create' )){
 	);
   }
 }
-
-class Pluto_Customize_Alpha_Color_Control extends WP_Customize_Control {
-	public $type = 'alphacolor';
-	//public $palette = '#3FADD7,#555555,#666666, #F5f5f5,#333333,#404040,#2B4267';
-	public $palette = true;
-	public $default = '#3FADD7';
-	protected function render() {
-		$id = 'customize-control-' . str_replace( '[', '-', str_replace( ']', '', $this->id ) );
-		$class = 'customize-control customize-control-' . $this->type; ?>
-		<li id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $class ); ?>">
-			<?php $this->render_content(); ?>
-		</li>
-	<?php }
-    public function render_content() { ?>
-       <label>
-           <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-           <input type="text" data-palette="<?php echo $this->palette; ?>" data-default-color="<?php echo $this->default; ?>" value="<?php echo intval( $this->value() ); ?>" class="pluto-color-control" <?php $this->link(); ?>  />
-       </label>
-   <?php }
-    }
-
+if(!function_exists( 'pluto_add_customizer_custom_controls' )){
+	function pluto_add_customizer_custom_controls( $wp_customize ) {
+		class Pluto_Customize_Alpha_Color_Control extends WP_Customize_Control {
+			public $type = 'alphacolor';
+			//public $palette = '#3FADD7,#555555,#666666, #F5f5f5,#333333,#404040,#2B4267';
+			public $palette = true;
+			public $default = '#3FADD7';
+			protected function render() {
+				$id = 'customize-control-' . str_replace( '[', '-', str_replace( ']', '', $this->id ) );
+				$class = 'customize-control customize-control-' . $this->type; ?>
+				<li id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $class ); ?>">
+					<?php $this->render_content(); ?>
+				</li>
+			<?php }
+			public function render_content() { ?>
+				<label>
+					<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+					<input type="text" data-palette="<?php echo $this->palette; ?>" data-default-color="<?php echo $this->default; ?>" value="<?php echo intval( $this->value() ); ?>" class="pluto-color-control" <?php $this->link(); ?>  />
+				</label>
+			<?php }
+		}
+	}
+	add_action( 'customize_register', 'pluto_add_customizer_custom_controls' );
+}
 ?>
