@@ -1,11 +1,11 @@
 <?php
 /*
-Plugin Name: Button Customizer
-Plugin URI: http://see-ya-soon.com
-Description: Plugin for customizing WooCommerce buttons
+Plugin Name: Woo Button Customizer
+Plugin URI: http://www.pootlepress.com
+Description: Plugin for customizing WooThemes Shortcode buttons
 Version: 0.7
-Author: Shramee
-Author URI: http://shramee.com/
+Author: PootlePress
+Author URI: http://www.pootlepress.com/
 License: GPL version 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 */
 require_once('inc/functions.php');
