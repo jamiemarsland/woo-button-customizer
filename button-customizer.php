@@ -13,7 +13,7 @@ require_once('inc/actions.php');
 function woo_bc_s_wp_admin_scripts() {
     wp_enqueue_script(
         'woo_bc_s-customizer-menu-script',
-        plugins_url(). '/cx-button-customizer/js/customizr-menu.js',
+        plugins_url(). '/woo-button-customizer/js/customizr-menu.js',
         array( 'jquery'),
         '0.3.0',
         true
