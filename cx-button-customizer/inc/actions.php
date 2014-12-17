@@ -1,9 +1,22 @@
 <?php
 require_once('variables.php');
 
-function shramee_customizer_css() { 
+function woo_bc_s_customizer_css() { 
 	$num_of_butts = 4;
+	GLOBAL $our_google_fonts;
 	?>
+	<?php
+	if(isset($our_google_fonts)){
+		for ($i=1; $i < ($num_of_butts+1); $i++) {
+			GLOBAL $settings_prefix;
+			if(array_key_exists(get_theme_mod( $settings_prefix.$i.'_font_type', 'Helvetica, Arial'), $our_google_fonts)){?>
+				<link href='http://fonts.googleapis.com/css?family=<?php str_replace(' ', '+', get_theme_mod( $settings_prefix.$i.'_font_type', 'Helvetica, Arial')); ?>' rel='stylesheet' type='text/css'>
+			<?php
+			}
+		}
+	}
+	?>
+	
 	<style type="text/css" id='cx-bc-stylesheet'>
 		<?php for ($i=1; $i < ($num_of_butts+1); $i++) {
 		GLOBAL $settings_prefix;
@@ -29,7 +42,7 @@ function shramee_customizer_css() {
 	<?php } ?>
 	</style>
 <?php }
-add_action( 'wp_head', 'shramee_customizer_css' );
+add_action( 'wp_head', 'woo_bc_s_customizer_css' );
 
 /**
  * Registers Javascript for live preview

@@ -1,5 +1,5 @@
 <?php
-/*class shramee_WP_Customize_Number_Control extends WP_Customize_Control {
+/*class woo_bc_s_WP_Customize_Number_Control extends WP_Customize_Control {
 	public $type = 'number';
 
 	public function render_content() {
@@ -13,7 +13,7 @@
     }
 }
 
-class shramee_WP_Customize_Number_Control extends WP_Customize_Control {
+class woo_bc_s_WP_Customize_Number_Control extends WP_Customize_Control {
 	public $type = 'number';
 
 	public function render_content() {
