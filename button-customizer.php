@@ -18,7 +18,7 @@ function woo_bc_s_wp_admin_scripts() {
         '0.3.0',
         true
     );
-    wp_enqueue_style('woo_bc_s-customizer-menu-script', plugins_url(). '/cx-button-customizer/css/customizr-menu.css');
+    wp_enqueue_style('woo_bc_s-customizer-menu-script', plugins_url(). '/woo-button-customizer-master/css/customizr-menu.css');
 }
 add_action( 'admin_enqueue_scripts', 'woo_bc_s_wp_admin_scripts' );
 //add_action( 'customize_preview_init', 'woo_bc_s_customizer_live_preview' );
