@@ -54,7 +54,15 @@ if(strpos($theme_name, 'Canvas')!==false){
 	}elseif ($our_google_fonts){
 		$our_fonts = $our_google_fonts;
 	}else {
-		$our_fonts = false;
+		$our_fonts = array(
+				'"Times New Roman", Times, serif' => '"Times New Roman", Times, serif',
+				'Georgia, serif' => 'Georgia, serif',
+				'"Palatino Linotype", "Book Antiqua", Palatino, serif' => '"Palatino Linotype", "Book Antiqua", Palatino, serif',
+				'Helvetica, Arial' => 'Helvetica, Arial',
+				'"Arial Black", Gadget, sans-serif' => '"Arial Black", Gadget, sans-serif',
+				'"Comic Sans MS", cursive, sans-serif'  => '"Comic Sans MS", cursive, sans-serif', 
+				'"Courier New", Courier, monospace' => '"Courier New", Courier, monospace'
+			);
 	}
 	
 	if(!function_exists( 'woo_bc_s_color_setting_create' )){
