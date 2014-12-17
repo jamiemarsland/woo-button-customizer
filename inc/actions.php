@@ -32,7 +32,7 @@ function woo_bc_s_customizer_css() {
 		color: <?php echo get_theme_mod( $settings_prefix.$i.'_font_color' , '#fff'); ?> !important;
 		font-size: <?php echo get_theme_mod( $settings_prefix.$i.'_font_size', '14' ); ?>px !important;
 		font-family: <?php echo get_theme_mod( $settings_prefix.$i.'_font_type', 'Helvetica, Arial' ); ?> !important;
-		font-weight: <?php echo get_theme_mod( $settings_prefix.$i.'_font_bold', 'normal'); ?> !important;
+		font-weight: <?php echo get_theme_mod( $settings_prefix.$i.'_font_weight', 'normal'); ?> !important;
 		padding: <?php echo get_theme_mod( $settings_prefix.$i.'_top_bottom_padding', '7' ) . 'px ' . get_theme_mod( $settings_prefix.$i.'_left_right_padding', '7' ); ?>px !important;
 		border: <?php echo get_theme_mod( $settings_prefix.$i.'_border_width', '1' ).'px solid  '. get_theme_mod( $settings_prefix.$i.'_border_color', '#09c' ); ?> !important;
 		-o-border-radius: <?php echo get_theme_mod( $settings_prefix.$i.'_button_rounded_corners', '4' ); ?>px !important;
