@@ -21,10 +21,9 @@ function woo_bc_s_wp_admin_scripts() {
     wp_enqueue_style('woo_bc_s-customizer-menu-script', plugins_url(). '/cx-button-customizer/css/customizr-menu.css');
 }
 add_action( 'admin_enqueue_scripts', 'woo_bc_s_wp_admin_scripts' );
-/*
 function woo_bc_s_customizer_live_preview() {
     wp_enqueue_script(
-        'tcx-theme-customizer',
+        'cx-button-customizer',
         plugins_url(). '/cx-button-customizer/js/customizr-menu.js',
         array( 'jquery', 'customize-preview' ),
         '0.3.0',
@@ -33,5 +32,4 @@ function woo_bc_s_customizer_live_preview() {
  
 }
 add_action( 'customize_preview_init', 'woo_bc_s_customizer_live_preview' );
-*/
 ?>
