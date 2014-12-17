@@ -36,7 +36,7 @@ function cx_bc_register_theme_customizer( $wp_customize ) {
 		woo_bc_s_color_setting_create($i, 'Button Hover Color', '#09e', 'cx_bc_button'.$i, $wp_customize, 2);
 		woo_bc_s_color_setting_create($i, 'Font Color', '#fff', 'cx_bc_button'.$i, $wp_customize, 3);
 		
-		if(isset($our_fonts)){
+		if(isset($our_fonts) && count($our_fonts)>0){
 			$fonts = $our_fonts;
 		}else{
 			$fonts = array(
