@@ -35,22 +35,7 @@ function cx_bc_register_theme_customizer( $wp_customize ) {
 		woo_bc_s_color_setting_create($i, 'Button Color', '#0be', 'cx_bc_button'.$i, $wp_customize, 1);
 		woo_bc_s_color_setting_create($i, 'Button Hover Color', '#09e', 'cx_bc_button'.$i, $wp_customize, 2);
 		woo_bc_s_color_setting_create($i, 'Font Color', '#fff', 'cx_bc_button'.$i, $wp_customize, 3);
-		
-		if(isset($our_fonts) && count($our_fonts)>0){
-			$fonts = $our_fonts;
-		}else{
-			$fonts = array(
-				'"Times New Roman", Times, serif' => '"Times New Roman", Times, serif',
-				'Georgia, serif' => 'Georgia, serif',
-				'"Palatino Linotype", "Book Antiqua", Palatino, serif' => '"Palatino Linotype", "Book Antiqua", Palatino, serif',
-				'Helvetica, Arial' => 'Helvetica, Arial',
-				'"Arial Black", Gadget, sans-serif' => '"Arial Black", Gadget, sans-serif',
-				'"Comic Sans MS", cursive, sans-serif'  => '"Comic Sans MS", cursive, sans-serif', 
-				'"Courier New", Courier, monospace' => '"Courier New", Courier, monospace'
-			);
-		}
-		
-		woo_bc_s_new_setting_create($i, 'select', 'Font Type', 'Helvetica, Arial', 'cx_bc_button'.$i, $wp_customize, 4, $fonts);
+		woo_bc_s_new_setting_create($i, 'select', 'Font Type', 'Helvetica, Arial', 'cx_bc_button'.$i, $wp_customize, 4, $our_fonts);
 		woo_bc_s_new_setting_create($i, 'number', 'Font Size', '14', 'cx_bc_button'.$i, $wp_customize, 5);
 		woo_bc_s_new_setting_create($i, 'radio', 'Font Weight', 'normal', 'cx_bc_button'.$i, $wp_customize, 6, 
 			array(
