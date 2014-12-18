@@ -87,7 +87,7 @@ if(strpos($theme_name, 'Canvas')!==false){
 			$setting_name ,
 			array(
 					'default'     => $default,
-//					'transport'   => 'postMessage'
+					'transport'   => 'refresh'
 			)
 	);
 	//Adding control
@@ -160,7 +160,7 @@ if(!function_exists( 'woo_bc_s_new_setting_create' )){
 			$setting_name ,
 			array(
 					'default'     => $default,
-//					'transport'   => 'postMessage'
+					'transport'   => 'refresh'
 			)
 	);
 	//Adding control
