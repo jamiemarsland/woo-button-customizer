@@ -91,6 +91,8 @@ jQuery(document).ready(function($) {
 			$($control).wpColorPicker('color', get_val);
 		});
 	}); // each
+	setInterval(function(){$('input.rgba-color-woo-bc').change();}, 2500);
+
 //END//END//END//END//END//PLUTO COLOR PICKER//END//END//END//END//END//END//END//END/
 
 
