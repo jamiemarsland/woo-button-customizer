@@ -190,7 +190,7 @@ if(!function_exists( 'pluto_add_customizer_custom_controls' )){
 			public function render_content() { ?>
 				<label>
 					<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-					<input type="text" data-palette="<?php echo $this->palette; ?>" data-default-color="<?php echo $this->default; ?>" value="<?php echo intval( $this->value() ); ?>" class="pluto-color-control" <?php $this->link(); ?>  />
+					<input type="text" data-palette="<?php echo $this->palette; ?>" data-default-color="<?php echo $this->default; ?>" value="<?php echo intval( $this->value() ); ?>" class="pluto-color-control rgba-color-woo-bc" <?php $this->link(); ?>  />
 				</label>
 			<?php }
 		}
